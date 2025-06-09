@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Membership Certificate</title>
+</head>
+<body style="text-align: center; padding-top: 100px; font-family: Arial;">
+
+  <h1>Certificate of Membership</h1>
+  <h2>This certifies that</h2>
+
+  <h2 id="memberName">[Name]</h2>
+
+  <p>is a registered member of</p>
+  <h3>MemberHub</h3>
+
+  <p>Email: <span id="memberEmail">[Email]</span></p>
+  <p>Membership Type: <span id="memberType">[Type]</span></p>
+
+  <br><br>
+  <button onclick="window.print()">Print Certificate</button>
+
+  <script>
+    const member = JSON.parse(localStorage.getItem("selectedMember")) || {};
+    document.getElementById("memberName").innerText = member.name || '';
+    document.getElementById("memberEmail").innerText = member.email || '';
+    document.getElementById("memberType").innerText = member.type || '';
+  </script>
+
+</body>
+</html>

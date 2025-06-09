@@ -1,0 +1,165 @@
+/* General */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 30px;
+}
+
+/* Container */
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+  background: #fff;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 12px;
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+input, select {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  border: none;
+  background-color: #2980b9;
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #1c6fa1;
+}
+
+/* Links */
+a {
+  display: inline-block;
+  margin-top: 20px;
+  color: #2980b9;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+th, td {
+  padding: 14px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+th {
+  background-color: #2980b9;
+  color: white;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+td button {
+  margin: 0 5px;
+  background-color: #27ae60;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+td button:hover {
+  background-color: #1e8c4e;
+}
+
+td button:last-child {
+  background-color: #ba2d1d;
+}
+
+td button:last-child:hover {
+  background-color: #c32514;
+}
+
+/* Certificate */
+.certificate {
+  background: #fff;
+  padding: 40px;
+  border: 8px double #2c3e50;
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.certificate h1 {
+  color: #2c3e50;
+  font-size: 32px;
+}
+
+.certificate h2 {
+  color: #34495e;
+}
+
+.actions {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.actions button {
+  background-color: #8e44ad;
+}
+
+.actions button:hover {
+  background-color: #71368a;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .container, .certificate {
+    padding: 20px;
+  }
+
+  table, th, td {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+}

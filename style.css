@@ -1,0 +1,48 @@
+*{
+    margin: 10px;
+    padding: 10px;
+    box-sizing: content-box;
+    font-family: "poppins", sans-serif;
+}
+
+body{
+    display: flow-root;
+    justify-content:center;
+    text-align: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('img.jpg');
+}
+
+input, select{
+    width: 25%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+}
+button {
+    width: 25%;
+    height: 100%;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px  rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+h1{
+    text-align: center;
+    color: #fff;
+}
+label{
+    color: #fff;
+}
+a{
+    color: #fff;
+}

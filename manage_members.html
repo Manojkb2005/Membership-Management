@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Manage Members</title>
+  <link rel="stylesheet" href="./isty.css">
+</head>
+<body>
+
+  <h1>Manage Members</h1>
+
+  <table border="1" id="memberTable">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Type</th>
+      <th>Certificate</th>
+      <th>Actions</th>
+    </tr>
+  </table>
+
+  <a href="./index.html">Back to Add Member</a>
+
+  <script>
+    const table = document.getElementById("memberTable");
+    let members = JSON.parse(localStorage.getItem("members")) || [];
+
+    function renderTable() {
+      table.querySelectorAll("tr:not(:first-child)").forEach(row => row.remove());
+
+      members.forEach((member, index) => {
+        const row = table.insertRow();
+        row.insertCell(0).innerText = member.name;
+        row.insertCell(1).innerText = member.email;
+        row.insertCell(2).innerText = member.type;
+
+        const certCell = row.insertCell(3);
+        const certBtn = document.createElement("button");
+        certBtn.innerText = "Generate";
+        certBtn.onclick = () => {
+          localStorage.setItem("selectedMember", JSON.stringify(member));
+          window.open("cerficate.html", "_blank");
+        };
+      
+        certCell.appendChild(certBtn);
+
+        const actionsCell = row.insertCell(4);
+        const editBtn = document.createElement("button");
+        editBtn.innerText = "Edit";
+        editBtn.onclick = () => {
+          const newName = prompt("Edit Name:", member.name);
+          const newEmail = prompt("Edit Email:", member.email);
+          const newType = prompt("Edit Type:", member.type);
+          if (newName && newEmail && newType) {
+            members[index] = { name: newName, email: newEmail, type: newType };
+            localStorage.setItem("members", JSON.stringify(members));
+            renderTable();
+          }
+        };
+
+        const delBtn = document.createElement("button");
+        delBtn.innerText = "Delete";
+        delBtn.onclick = () => {
+          if (confirm("Are you sure?")) {
+            members.splice(index, 1);
+            localStorage.setItem("members", JSON.stringify(members));
+            renderTable();
+          }
+        };
+
+        actionsCell.appendChild(editBtn);
+        actionsCell.appendChild(delBtn);
+      });
+    }
+
+    renderTable();
+  </script>
+
+</body>
+</html>
